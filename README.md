@@ -7,7 +7,7 @@
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)]()
 
 
-[Jinjie Ni†](https://jinjieni.github.io/) and the team
+[Jinjie Ni](https://jinjieni.github.io/) and the team
 
 <!-- †Correspondence to: Jinjie Ni \<jinjieni@nus.edu.sg\> -->
 </div>
