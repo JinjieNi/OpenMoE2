@@ -4,7 +4,7 @@
 # **OpenMoE 2: Sparse Diffusion Language Models**
 
 [![Static Badge](https://img.shields.io/badge/Blog-2025--10--02-darkcyan)](https://jinjieni.notion.site/OpenMoE-2-Sparse-Diffusion-Language-Models-277d8f03a8668065a4ecd23f23bd6aac?source=copy_link)
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)]()
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)](https://x.com/NiJinjie/status/1973747616082186349)
 
 
 [Jinjie Ni](https://jinjieni.github.io/) and the team
