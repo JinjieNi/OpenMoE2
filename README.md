@@ -1,7 +1,14 @@
 <div align="center">
 
+<p align="center" width="100%">
+<img src="resources/imgs/dense_vs_moe.png"  width="100%" height="100%">
+</p>
+
 <!-- TITLE -->
-# **OpenMoE 2: Sparse Diffusion Language Models**
+**OpenMoE 2: Sparse Diffusion Language Models**
+===========================
+
+<h4>The first-ever sparse diffusion large language model trained from scratch, focusing on architectural insights.</h4>
 
 [![Static Badge](https://img.shields.io/badge/Blog-2025--10--02-darkcyan)](https://jinjieni.notion.site/OpenMoE-2-Sparse-Diffusion-Language-Models-277d8f03a8668065a4ecd23f23bd6aac?source=copy_link)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)](https://x.com/NiJinjie/status/1973747616082186349)
@@ -12,26 +19,81 @@
 <!-- †Correspondence to: Jinjie Ni \<jinjieni@nus.edu.sg\> -->
 </div>
 
-<p align="center" width="100%">
-<img src="resources/imgs/dense_vs_moe.png"  width="100%" height="100%">
-</p>
+# News
+[2025-10-27] We release the codebase and all training checkpoints. The codebase is highly optimized and is industry-level in terms scalability and efficiency.
 
-*Benchmarking FLOPs-matching and parameter-matching dense DLMs with expert-choice and token-choice SDLMs. All training settings are strictly the same except the model size and architectures.*
+[2025-10-03] The blog is out! Check it out [here](https://jinjieni.notion.site/OpenMoE-2-Sparse-Diffusion-Language-Models-277d8f03a8668065a4ecd23f23bd6aac?source=copy_link)!
+
+
+<br>
+
+# Code
+The codebase is released [here](https://github.com/JinjieNi/MegaDLMs). It is a highly-optimized codebase for any-scale DLMs training backend with Megatron-LM.
+
+> The full MoE implementation is not yet released. We plan to release it after the main training is done.
 
 
 
 <br>
 
-# Highlights
-Diffusion language models (DLMs) offer several key advantages over autoregressive (AR) models. Their parallel decoding scheme enables certain commercial DLMs to generate thousands of tokens per second, achieving substantially lower latency in practical applications compared to AR models. In addition, they also demonstrated strong performance in coding and mathematical reasoning tasks, likely attributable to their higher compute-to-parameter ratio. Notably, previous work shows that DLMs possess greater data efficiency than AR models in low-data regimes—so-called "intelligence crossovers"—highlighting a fundamental advantage of DLMs under data constraint.
+# Resources
 
-Considering these advantages, we aim to establish a principled scaling path for DLMs to further extend their capability frontier. In this work, we present **OpenMoE 2**, the first systematic study of pre-training sparse diffusion language models (SDLM) from scratch for parameter scaling. We demonstrate that **DLMs can be scaled effectively through sheer parameter expansion without increasing compute, offering a way to flexibly adjust the compute-to-parameter ratio when scaling up.**
+We opensource all model checkpoints, training logs, and datasets mentioned in the paper. All of them can be downloaded at https://huggingface.co/collections/jinjieni/mdga.
 
-Moreover, diffusion and MoEs form a **double-win combination** on repeated data: SDLM consistently beats the FLOPs-matching dense DLM and all AR models, while the AR MoE performs the worst among all AR counterparts. A strictly controlled experiment gives a striking conclusion: **models with a low compute-to-parameter ratio, such as AR MoEs, perform exceptionally poorly on repeated data**, worse than both their FLOPs-matched and parameter-matched dense counterparts. In contrast, MoEs trained with diffusion objective avoid this issue, benefiting from **a high and tunable compute-to-parameter ratio.**
+The easiest way to download a folder is using this script (setup the variables properly):
+```
+python utils/hf_download_folder.py
+```
 
-Importantly, SDLM inherently supports **expert-choice routing**, enabling higher throughput, adaptive computation, and perfect load balancing without auxiliary objectives.
+Alternatively, you can also use `wget` to directly download individual files from the folder, e.g.:
+```bash
+wget https://huggingface.co/datasets/MDGA-1/openmoe2_logs/blob/main/dense_vs_moe/dense_100b_1e_1b7_difflm/tensorboard/events.out.tfevents.1755443508.0648415733
+```
 
-We further conduct extensive ablations on architectural design choices, yielding insights that inform our final scaling strategy (TBD).
+We link the related resources below:
+
+- Parameter–Compute Trade-off
+    - [[ckpt]()][[log]()] dense 1.7b
+    - [[ckpt]()][[log]()] dense 8b
+    - [[ckpt]()][[log]()] moe-8b1.7a-topk
+    - [[ckpt]()][[log]()] moe-8b1.7a-ec
+- Diffusion + MoE is a Double Win
+    - [[ckpt]()][[log]()] AR dense 1b
+    - [[ckpt]()][[log]()] DLM dense 1b
+    - [[ckpt]()][[log]()] AR dense 8b
+    - [[ckpt]()][[log]()] DLM dense 8b
+    - [[ckpt]()][[log]()] AR MoE 8b1a
+    - [[ckpt]()][[log]()] DLM MoE 8b1a
+- Token-choice vs. Expert-choice
+    - [[ckpt]()][[log]()] tc
+    - [[ckpt]()][[log]()] ec
+- Token-Wise Load-Balancing
+    - [[ckpt]()][[log]()] with
+    - [[ckpt]()][[log]()] without
+- with and without shared experts
+    - [[ckpt]()][[log]()] with
+    - [[ckpt]()][[log]()] without
+- scaling the expert granularities
+    - [[ckpt]()][[log]()] 16
+    - [[ckpt]()][[log]()] 64
+    - [[ckpt]()][[log]()] 256
+- scratch vs. upcycling
+    - [[ckpt]()][[log]()] scratch
+    - [[ckpt]()][[log]()] upcycling
+- Skip the First 2 MoE Layers
+    - [[ckpt]()][[log]()] skip
+    - [[ckpt]()][[log]()] keep
+- with and without scaling factors
+    - [[ckpt]()][[log]()] tc with
+    - [[ckpt]()][[log]()] tc without
+    - [[ckpt]()][[log]()] ec with
+    - [[ckpt]()][[log]()] ec without
+- Batch vs. Sequence Level Expert Choice
+    - [[ckpt]()][[log]()] batch
+    - [[ckpt]()][[log]()] seq
+- Softmax vs. Sigmoid
+    - [[ckpt]()][[log]()] softmax
+    - [[ckpt]()][[log]()] sigmoid
 
 <br>
 
