@@ -15,6 +15,7 @@
 <h4>The first-ever sparse diffusion large language model trained from scratch, focusing on architectural insights.</h4>
 
 [![Static Badge](https://img.shields.io/badge/Blog-2025--10--02-darkcyan)](https://jinjieni.notion.site/OpenMoE-2-Sparse-Diffusion-Language-Models-277d8f03a8668065a4ecd23f23bd6aac?source=copy_link)
+[![Static Badge](https://img.shields.io/badge/Infra-training--backend-darkblue)](https://github.com/JinjieNi/MegaDLMs)
 [![Static Badge](https://img.shields.io/badge/Resources-ckpts--logs-green)](#resources)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)](https://x.com/NiJinjie/status/1973747616082186349)
 
