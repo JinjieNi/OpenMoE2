@@ -122,10 +122,9 @@ You can refer to [this](https://github.com/JinjieNi/MegaDLMs/blob/main/examples/
 # Citation
 ```
 @misc{ni2025openmoe2,
-title={OpenMoE 2: Sparse Diffusion Language Models},
-author={Ni, Jinjie and team},
-year={2025},
-howpublished={\url{https://jinjieni.notion.site/OpenMoE-2-Sparse-Diffusion-Language-Models-277d8f03a8668065a4ecd23f23bd6aac}},
-note={Notion Blog},
+  title={OpenMoE 2: Sparse Diffusion Language Models},
+  author={Ni, Jinjie and team},
+  year={2025}
+  howpublished={\url{https://github.com/JinjieNi/OpenMoE2}},
 }
 ```
